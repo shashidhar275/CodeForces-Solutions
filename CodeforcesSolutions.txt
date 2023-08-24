@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+void solve(int n,int m)
+{
+    char **arr = new char*[n];
+    for(int i=0;i<n;i++)
+    {
+        arr[i] = new char[m];
+    }
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            cin>> arr[i][j];
+        }
+    }
+ 
+    char name[4]= {'v' , 'i' , 'k' , 'a'};
+    int k=0;
+    for(int col=0;col<m;col++)
+    {
+        for(int row=0;row<n;row++)
+        {
+            if(arr[row][col]==name[k])
+            {
+                k++;
+                break;
+            }
+        }
+    }
+    if(k==4)
+    {
+        cout<< "Yes" << endl;
+    }
+    else{
+        cout << "No" << endl;
+    }
+}
+int main()
+{
+    int tc; 
+    cin>> tc;
+    for(int i=0;i<tc;i++)
+    {
+        int n,m;
+        cin>> n >> m;
+        solve(n,m);
+    }
+}
